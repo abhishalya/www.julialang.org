@@ -1,4 +1,4 @@
-baseURL: https://julialang.org
+baseURL: https://codemute.ml
 relativeURLs: true
 canonifyURLs: true
 googleAnalytics: UA-28835595-1
