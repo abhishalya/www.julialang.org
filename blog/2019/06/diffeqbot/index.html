@@ -15,9 +15,9 @@
 <meta property="og:description" content="Official website for the Julia programming language"/>
 
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
-<link rel="stylesheet" href="https://julialang.org/v2/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://julialang.org/v2/css/app.css" />
-<link rel="stylesheet" href="https://julialang.org/v2/css/fonts.css" />
+<link rel="stylesheet" href="https://codemute.ml/v2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://codemute.ml/v2/css/app.css" />
+<link rel="stylesheet" href="https://codemute.ml/v2/css/fonts.css" />
 
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -60,7 +60,7 @@ if (!doNotTrack) {
   <nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-menu">
 
     <a class="navbar-brand" href="../../../../" id="logo">
-      <img src="https://julialang.org/v2/img/logo.svg" height="55" width="85" alt="JuliaLang Logo"/>
+      <img src="https://codemute.ml/v2/img/logo.svg" height="55" width="85" alt="JuliaLang Logo"/>
     </a>
 
     <button class="navbar-toggler ml-auto hidden-sm-up float-xs-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,25 +71,25 @@ if (!doNotTrack) {
       <ul class="navbar-nav mr-auto">
         
         <li class="nav-item  flex-md-fill text-md-center">
-          <a class="nav-link" href="https://julialang.org/downloads/">Download</a>
+          <a class="nav-link" href="https://codemute.ml/downloads/">Download</a>
         </li>
         <li class="nav-item flex-md-fill text-md-center">
           <a class="nav-link" href="https://docs.julialang.org">Documentation</a>
         </li>
         <li class="nav-item  active  flex-md-fill text-md-center">
-          <a class="nav-link" href="https://julialang.org/blog/">Blog</a>
+          <a class="nav-link" href="https://codemute.ml/blog/">Blog</a>
         </li>
         <li class="nav-item  flex-md-fill text-md-center">
-          <a class="nav-link" href="https://julialang.org/community/">Community</a>
+          <a class="nav-link" href="https://codemute.ml/community/">Community</a>
         </li>
         <li class="nav-item  flex-md-fill text-md-center">
-          <a class="nav-link" href="https://julialang.org/learning/">Learning</a>
+          <a class="nav-link" href="https://codemute.ml/learning/">Learning</a>
         </li>
         <li class="nav-item  flex-md-fill text-md-center">
-          <a class="nav-link" href="https://julialang.org/research/">Research</a>
+          <a class="nav-link" href="https://codemute.ml/research/">Research</a>
         </li>
         <li class="nav-item  flex-md-fill text-md-center">
-          <a class="nav-link" href="https://julialang.org/jsoc/">JSoC</a>
+          <a class="nav-link" href="https://codemute.ml/jsoc/">JSoC</a>
         </li>
         <li class="nav-item donate flex-md-fill text-md-center">
           <a class="btn btn-success" href="https://numfocus.org/donate-to-julia">Donate</a>
@@ -149,20 +149,20 @@ DIAGRAMS<span style="color:#666"></span>[<span style="color:#b44">&#34;</span><s
 
 <ol>
 <li><p>Here comes the tricky part. We have a seperate dedicated Gitlab private repository called <code>BenchmarkingRepo</code> which is basically an empty repository, but plays an important role which would be explained now. DiffEqBot checks out a branch with name formatted as <code>REPONAME-PR</code> and generates a Gitlab CI configuration script (<code>.gitlab-ci.yml</code>) and makes a commit on this branch. What this configuration does is, pull the PR where the request is made, run the benchmarks, and post the results back to the bot. Basically the script is -</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#a2f;font-weight:bold">main</span>:<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#a2f;font-weight:bold">script</span>:<span style="color:#bbb">
-</span><span style="color:#bbb"></span>- git<span style="color:#bbb"> </span>clone<span style="color:#bbb"> </span>https://github.com/${org}/${repo}<span style="color:#bbb">
-</span><span style="color:#bbb"></span>- cd<span style="color:#bbb"> </span>${repo}<span style="color:#bbb">
-</span><span style="color:#bbb"></span>- git<span style="color:#bbb"> </span>fetch<span style="color:#bbb"> </span>origin<span style="color:#bbb"> </span>pull/${pr}/head:pr/${pr}<span style="color:#bbb">
-</span><span style="color:#bbb"></span>- git<span style="color:#bbb"> </span>checkout<span style="color:#bbb"> </span>pr/${pr}<span style="color:#bbb">
-</span><span style="color:#bbb"></span>- julia<span style="color:#bbb"> </span>-e<span style="color:#bbb"> </span><span style="color:#b44">&#34;using Pkg;Pkg.clone(pwd());&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span>- cd<span style="color:#bbb"> </span>..<span style="color:#bbb">
-</span><span style="color:#bbb"></span>- julia<span style="color:#bbb"> </span>some_script_to_run_benchmarks.jl<span style="color:#bbb"> </span><span style="color:#b44">&#34;${repo}&#34;</span><span style="color:#bbb"> </span><span style="color:#b44">&#34;${pr}&#34;</span><span style="color:#bbb"> </span><span style="color:#b44">&#34;${commit}&#34;</span><span style="color:#bbb">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">main:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>script:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>git<span style="color:#bbb"> </span>clone<span style="color:#bbb"> </span>https://github.com/${org}/${repo}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>cd<span style="color:#bbb"> </span>${repo}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>git<span style="color:#bbb"> </span>fetch<span style="color:#bbb"> </span>origin<span style="color:#bbb"> </span>pull/${pr}/head:pr/${pr}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>git<span style="color:#bbb"> </span>checkout<span style="color:#bbb"> </span>pr/${pr}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>julia<span style="color:#bbb"> </span>-e<span style="color:#bbb"> </span><span style="color:#b44">&#34;using Pkg;Pkg.clone(pwd());&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>cd<span style="color:#bbb"> </span>..<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>julia<span style="color:#bbb"> </span>some_script_to_run_benchmarks.jl<span style="color:#bbb"> </span><span style="color:#b44">&#34;${repo}&#34;</span><span style="color:#bbb"> </span><span style="color:#b44">&#34;${pr}&#34;</span><span style="color:#bbb"> </span><span style="color:#b44">&#34;${commit}&#34;</span><span style="color:#bbb">
 </span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#a2f;font-weight:bold">failed_job</span>:<span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#a2f;font-weight:bold">script</span>:<span style="color:#bbb">
-</span><span style="color:#bbb"></span>- curl<span style="color:#bbb"> </span><span style="color:#b44">&#34;http://endpoint_to_tell_that_report_failed?repo=${repo}&amp;pr=${pr}&amp;commit=${commit}&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#a2f;font-weight:bold">when</span>:<span style="color:#bbb"> </span>on_failure</code></pre></div></li>
+</span><span style="color:#bbb"></span>failed_job:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>script:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>curl<span style="color:#bbb"> </span><span style="color:#b44">&#34;http://endpoint_to_tell_that_report_failed?repo=${repo}&amp;pr=${pr}&amp;commit=${commit}&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>when:<span style="color:#bbb"> </span>on_failure</code></pre></div></li>
 </ol>
 
 <div style="text-align:center"><img src="https://i.imgur.com/ORRPWx7.jpg" /></div>

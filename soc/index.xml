@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Socs on </title>
-    <link>https://julialang.org/soc/</link>
+    <link>https://codemute.ml/soc/</link>
     <description>Recent content in Socs on </description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://julialang.org/soc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://codemute.ml/soc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://julialang.org/soc/ideas-page/</link>
+      <link>https://codemute.ml/soc/ideas-page/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://julialang.org/soc/ideas-page/</guid>
+      <guid>https://codemute.ml/soc/ideas-page/</guid>
       <description></description>
     </item>
     
